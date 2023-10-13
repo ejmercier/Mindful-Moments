@@ -2,25 +2,39 @@
 //  ContentView.swift
 //  Mindful Moments
 //
-//  Created by user247884 on 10/12/23.
+//  Created by Cathy Pham on 10/12/23.
 //
 
 import SwiftUI
 
 struct ContentView: View {
+    @State private var givenName: String = ""
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationStack {
+            VStack {
+                Text("Welcome to Mindful Moments")
+                    .foregroundStyle(.primary)
+                    .font(.largeTitle)
+                    .padding()
+                Text("Please enter your name")
+                    .foregroundStyle(.primary)
+                    .font(.title2)
+                TextField("First Name",text: $givenName)
+                    .disableAutocorrection(true)
+                    .frame(width: UIScreen.main.bounds.width * 0.6)
+                    .textFieldStyle(.roundedBorder)
+                NavigationLink("Submit") {
+                    QuestionView(name: givenName)
+                }
+            }
+            .padding()
         }
-        .padding()
+        
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+
+#Preview {
+    ContentView()
 }

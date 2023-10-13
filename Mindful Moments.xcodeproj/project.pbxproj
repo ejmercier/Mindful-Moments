@@ -14,6 +14,7 @@
 		022EEB862AD8628F001291B5 /* Mindful_MomentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022EEB852AD8628F001291B5 /* Mindful_MomentsTests.swift */; };
 		022EEB902AD8628F001291B5 /* Mindful_MomentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022EEB8F2AD8628F001291B5 /* Mindful_MomentsUITests.swift */; };
 		022EEB922AD8628F001291B5 /* Mindful_MomentsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022EEB912AD8628F001291B5 /* Mindful_MomentsUITestsLaunchTests.swift */; };
+		9FADFF5F2AD8B8170072F79B /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FADFF5E2AD8B8170072F79B /* QuestionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		022EEB8B2AD8628F001291B5 /* Mindful MomentsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mindful MomentsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		022EEB8F2AD8628F001291B5 /* Mindful_MomentsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mindful_MomentsUITests.swift; sourceTree = "<group>"; };
 		022EEB912AD8628F001291B5 /* Mindful_MomentsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mindful_MomentsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9FADFF5E2AD8B8170072F79B /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				022EEB732AD86289001291B5 /* Mindful_MomentsApp.swift */,
 				022EEB752AD86289001291B5 /* ContentView.swift */,
+				9FADFF5E2AD8B8170072F79B /* QuestionView.swift */,
 				022EEB772AD8628F001291B5 /* Assets.xcassets */,
 				022EEB792AD8628F001291B5 /* Mindful_Moments.entitlements */,
 				022EEB7A2AD8628F001291B5 /* Preview Content */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				022EEB762AD86289001291B5 /* ContentView.swift in Sources */,
+				9FADFF5F2AD8B8170072F79B /* QuestionView.swift in Sources */,
 				022EEB742AD86289001291B5 /* Mindful_MomentsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,7 +433,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -467,7 +471,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
