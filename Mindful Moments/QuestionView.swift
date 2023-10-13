@@ -11,11 +11,15 @@ struct QuestionView: View {
     var name: String
     
     var body: some View {
-        Text("Hello \(name)")
-        Text("This is the Question Screen")
+        VStack {
+            Text("Hello \(name)")
+            Text("This is the Question Screen")
+        }
     }
 }
 
-#Preview {
-    QuestionView(name: "User")
+struct QuestionView_Previews: PreviewProvider {
+    static var previews: some View {
+        QuestionView(name: "User")
+    }
 }
