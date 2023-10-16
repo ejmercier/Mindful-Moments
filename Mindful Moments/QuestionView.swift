@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Foundation
 
 struct QuestionView: View {
     var name: String
