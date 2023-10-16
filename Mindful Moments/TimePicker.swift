@@ -9,7 +9,6 @@ import UIKit
 import SwiftUI
 
 struct TimePicker: UIViewRepresentable {
-    @Binding var selectedDate: Date
     @Binding var countdownInterval: TimeInterval
 
     func makeUIView(context: Context) -> UIDatePicker {
