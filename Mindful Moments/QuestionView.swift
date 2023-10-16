@@ -6,14 +6,22 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct QuestionView: View {
     var name: String
+    @State private var date = Date()
+    @State private var savedDate = Date()
+    let dateFormatter = DateFormatter()
+    @State private var time = TimeInterval()
+    @State private var selectedCountdownInterval: TimeInterval = 0
     
     var body: some View {
         VStack {
             Text("Hello \(name)")
             Text("This is the Question Screen")
+            TimePicker(selectedDate: $date, countdownInterval: $selectedCountdownInterval)
+            Text("Selected Time Interval in seconds: \(selectedCountdownInterval)")
         }
     }
 }
