@@ -12,10 +12,14 @@ struct QuestionView: View {
     
     var body: some View {
         VStack {
-            Text("Hello \(name)")
-            Text("This is the Question Screen")
-//            FeelingPicker()
+            Text("Hi \(name)!")
+                .font(.title)
+                .padding(.bottom, 20)
+                .foregroundStyle(.gray)
+            Text("How do you feel?").font(.largeTitle)
+            FeelingPicker()
         }
+        .padding(.top, 40)
     }
 }
 
