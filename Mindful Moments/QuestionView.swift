@@ -7,16 +7,21 @@
 
 import SwiftUI
 
+class Time: ObservableObject {
+    @Published var timeInterval: TimeInterval = 0
+}
+
+
 struct QuestionView: View {
     var name: String
-    @State private var selectedCountdownInterval: TimeInterval = 0
+    @ObservedObject private var selectedTime = Time()
     
     var body: some View {
         VStack {
             Text("Hello \(name)")
             Text("This is the Question Screen")
-            TimePicker(countdownInterval: $selectedCountdownInterval)
-            Text("Selected Time Interval in seconds: \(selectedCountdownInterval)")
+            TimePicker(countdownInterval: $selectedTime.timeInterval)
+            Text("Selected Time Interval in seconds: \(selectedTime.timeInterval)")
         }
     }
 }
