@@ -17,7 +17,7 @@ struct QuestionView: View {
             
             //button to the next page (main screen)
             NavigationLink("Find Recommendations") {
-                MainScreenView()
+                MainScreenView(feeling: "Happy", time: "30")
                     .navigationTitle("Mindful Moments")
             }
         }
