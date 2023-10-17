@@ -21,7 +21,7 @@ struct QuestionView: View {
             Text("Hello \(name)")
             Text("This is the Question Screen")
             TimePicker(countdownInterval: $selectedTime.timeInterval)
-            Text("Selected Time Interval in seconds: \(selectedTime.timeInterval)")
+//            Text("Selected Time Interval in seconds: \(selectedTime.timeInterval)")
         }
     }
 }
