@@ -26,6 +26,7 @@ struct ContentView: View {
                     .textFieldStyle(.roundedBorder)
                 NavigationLink("Submit") {
                     QuestionView(name: givenName)
+                        .navigationTitle("Mindful Moments")
                 }
             }
             .padding()

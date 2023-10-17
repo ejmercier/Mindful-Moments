@@ -14,6 +14,12 @@ struct QuestionView: View {
         VStack {
             Text("Hello \(name)")
             Text("This is the Question Screen")
+            
+            //button to the next page (main screen)
+            NavigationLink("Find Recommendations") {
+                MainScreenView()
+                    .navigationTitle("Mindful Moments")
+            }
         }
     }
 }
