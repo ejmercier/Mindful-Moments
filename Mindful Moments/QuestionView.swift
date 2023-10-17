@@ -14,6 +14,7 @@ struct QuestionView: View {
         VStack {
             Text("Hello \(name)")
             Text("This is the Question Screen")
+//            FeelingPicker()
         }
     }
 }
