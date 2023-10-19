@@ -7,8 +7,14 @@
 
 import SwiftUI
 
+class Time: ObservableObject {
+    @Published var timeInterval: TimeInterval = 0
+}
+
+
 struct QuestionView: View {
     var name: String
+    @ObservedObject private var selectedTime = Time()
     
     var body: some View {
         VStack {
@@ -18,6 +24,16 @@ struct QuestionView: View {
                 .foregroundStyle(.gray)
             Text("How do you feel?").font(.largeTitle)
             FeelingPicker()
+            Text("Hello \(name)")
+            Text("This is the Question Screen")
+            TimePicker(countdownInterval: $selectedTime.timeInterval)
+//            Text("Selected Time Interval in seconds: \(selectedTime.timeInterval)")
+          
+           //button to the next page (main screen)
+            NavigationLink("Find Recommendations") {
+                MainScreenView(feeling: "Happy", time: "30")
+                    .navigationTitle("Mindful Moments")
+            }
         }
         .padding(.top, 40)
     }
