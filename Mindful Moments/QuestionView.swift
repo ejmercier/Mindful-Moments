@@ -22,6 +22,12 @@ struct QuestionView: View {
             Text("This is the Question Screen")
             TimePicker(countdownInterval: $selectedTime.timeInterval)
 //            Text("Selected Time Interval in seconds: \(selectedTime.timeInterval)")
+          
+           //button to the next page (main screen)
+            NavigationLink("Find Recommendations") {
+                MainScreenView(feeling: "Happy", time: "30")
+                    .navigationTitle("Mindful Moments")
+            }
         }
     }
 }

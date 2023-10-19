@@ -16,6 +16,7 @@
 		022EEB922AD8628F001291B5 /* Mindful_MomentsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022EEB912AD8628F001291B5 /* Mindful_MomentsUITestsLaunchTests.swift */; };
 		70AEE5292ADC8A17003DA972 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AEE5282ADC8A17003DA972 /* TimePicker.swift */; };
 		9FADFF5F2AD8B8170072F79B /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FADFF5E2AD8B8170072F79B /* QuestionView.swift */; };
+		9FBA5BAE2ADEE37F00331638 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA5BAD2ADEE37F00331638 /* MainScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		022EEB912AD8628F001291B5 /* Mindful_MomentsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mindful_MomentsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		70AEE5282ADC8A17003DA972 /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		9FADFF5E2AD8B8170072F79B /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		9FBA5BAD2ADEE37F00331638 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				022EEB732AD86289001291B5 /* Mindful_MomentsApp.swift */,
 				022EEB752AD86289001291B5 /* ContentView.swift */,
 				9FADFF5E2AD8B8170072F79B /* QuestionView.swift */,
+				9FBA5BAD2ADEE37F00331638 /* MainScreenView.swift */,
 				022EEB772AD8628F001291B5 /* Assets.xcassets */,
 				022EEB792AD8628F001291B5 /* Mindful_Moments.entitlements */,
 				022EEB7A2AD8628F001291B5 /* Preview Content */,
@@ -268,6 +271,7 @@
 				022EEB762AD86289001291B5 /* ContentView.swift in Sources */,
 				9FADFF5F2AD8B8170072F79B /* QuestionView.swift in Sources */,
 				022EEB742AD86289001291B5 /* Mindful_MomentsApp.swift in Sources */,
+				9FBA5BAE2ADEE37F00331638 /* MainScreenView.swift in Sources */,
 				70AEE5292ADC8A17003DA972 /* TimePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
