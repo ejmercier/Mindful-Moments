@@ -13,7 +13,7 @@ struct QuestionView: View {
     var body: some View {
         VStack {
             Text("Hi \(name)!")
-                .font(.title)
+                .font(.system(size: 30))
                 .padding(.bottom, 20)
                 .foregroundStyle(.gray)
             Text("How do you feel?").font(.largeTitle)

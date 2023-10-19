@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FeelingPicker: View {
-    let feelings: [Feeling] = [Feeling(name: "Happy", emoji: "😄"), Feeling(name: "Sad", emoji: "😢"), Feeling(name: "Stressed", emoji: "😓"), Feeling(name: "Angry", emoji: "😠"), Feeling(name: "Lonely", emoji: "😔")]
+    let feelings: [Feeling] = [Feeling(name: "Happy", emoji: "😄"), Feeling(name: "Sad", emoji: "😢"), Feeling(name: "Stressed", emoji: "😓"), Feeling(name: "Angry", emoji: "😠"), Feeling(name: "Lonely", emoji: "😔"), Feeling(name: "Nervous", emoji: "😖")]
 
     var body: some View {
         GeometryReader { geometry in
@@ -19,7 +19,7 @@ struct FeelingPicker: View {
                             .foregroundStyle(.black)
                             .font(.title2)
                             .padding(.horizontal, 12)
-                            .padding(.bottom, 25)
+                            .padding(.bottom, 40)
                     }
                 }
                 .padding(.horizontal, 10)
