@@ -7,8 +7,12 @@
 
 import SwiftUI
 
+
+
 struct ContentView: View {
     @State private var givenName: String = ""
+//    @Environment(\.modelContext) private var modelContext
+   // @Bindable var userInput: UserInputModel = UserInputModel(name: "", feeling: "", time: 0)
 
     var body: some View {
         NavigationStack {
@@ -30,8 +34,9 @@ struct ContentView: View {
                 }
             }
             .padding()
+//            .environmentObject(self.userInput)
+
         }
-        
     }
 }
 

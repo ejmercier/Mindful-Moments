@@ -11,21 +11,21 @@ class Time: ObservableObject {
     @Published var timeInterval: TimeInterval = 0
 }
 
-
 struct QuestionView: View {
-    var name: String
     @ObservedObject private var selectedTime = Time()
+//    @EnvironmentObject var userInput: UserInputModel
+    var name: String
     
     var body: some View {
         VStack {
             Text("Hello \(name)")
             Text("This is the Question Screen")
             TimePicker(countdownInterval: $selectedTime.timeInterval)
-//            Text("Selected Time Interval in seconds: \(selectedTime.timeInterval)")
-          
+            Text("Selected Time Interval in seconds: \(selectedTime.timeInterval)")
+
            //button to the next page (main screen)
             NavigationLink("Find Recommendations") {
-                MainScreenView(feeling: "Happy", time: "30")
+                MainScreenView(userInput: UserInputModel(name: name, feeling: "Happy", time: selectedTime.timeInterval))
                     .navigationTitle("Mindful Moments")
             }
         }
@@ -34,6 +34,6 @@ struct QuestionView: View {
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(name: "User")
+        QuestionView(name: "Cathy")
     }
 }

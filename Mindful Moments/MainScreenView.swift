@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct MainScreenView: View {
-    var feeling: String
-    var time: String
+    var userInput: UserInputModel
     
     var body: some View {
         HStack {
-            Text("Emotion: \(feeling)")
+            Text("Emotion: \(userInput.feeling)")
             Spacer()
-            Text("Time: \(time) mins")
+            Text("Time: \(userInput.time) secs")
         }
         .padding(.all, 25)
         
@@ -66,5 +65,5 @@ struct MeditationIcon: View {
 }
 
 #Preview {
-    MainScreenView(feeling: "Happy", time: "30")
+    MainScreenView(userInput: UserInputModel(name: "Cathy", feeling: "Happy", time: 60))
 }
