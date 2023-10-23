@@ -13,7 +13,6 @@ class Time: ObservableObject {
 
 struct QuestionView: View {
     @ObservedObject private var selectedTime = Time()
-//    @EnvironmentObject var userInput: UserInputModel
     var name: String
     
     var body: some View {
@@ -29,6 +28,18 @@ struct QuestionView: View {
                     .navigationTitle("Mindful Moments")
             }
         }
+    }
+}
+
+struct UserInputModel {
+    var name: String = ""
+    var feeling: String = ""
+    var time: TimeInterval = 0
+    
+    init(name: String, feeling: String, time: TimeInterval) {
+        self.name = name
+        self.feeling = feeling
+        self.time = time
     }
 }
 

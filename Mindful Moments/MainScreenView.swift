@@ -18,10 +18,8 @@ struct MainScreenView: View {
         }
         .padding(.all, 25)
         
-        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-            Text("Change selections")
-        })
-        .padding(.bottom, 30)
+        NavigationLink("Change selections", destination: QuestionView(name: userInput.name))
+            .padding(.bottom, 30)
         
         Text("Recomended Meditations")
             .foregroundStyle(.primary)
