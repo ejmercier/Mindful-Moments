@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainScreenView: View {
     @Environment(UserInputModel.self) private var userInput: UserInputModel
+    var time: TimeInterval
     
     var body: some View {
         HStack (alignment: .top) {
@@ -22,7 +23,7 @@ struct MainScreenView: View {
            
             VStack {
                 Text("Time Selected:")
-                let timeInMin: Int = Int(userInput.time/60)
+                let timeInMin: Int = Int(time/60)
                 Text("\(timeInMin) mins")
                     .frame(width: 90, height: 30)
                     .background(RoundedRectangle(cornerRadius: 15).fill(.background.secondary))
@@ -30,16 +31,15 @@ struct MainScreenView: View {
             .padding()
         }
         
-        
         NavigationLink("Change selections", destination: QuestionView(name: userInput.name))
             .padding(.bottom, 30)
         
-        Text("Recomended Meditations")
-            .foregroundStyle(.primary)
-            .font(.title)
-        
         GeometryReader { geometry in
                 ScrollView(.vertical, showsIndicators: false){
+                    Text("Recomended Meditations")
+                        .foregroundStyle(.primary)
+                        .font(.title)
+                    
                     VStack{
                         ForEach(0..<7){ _ in
                             VStack {
@@ -60,7 +60,7 @@ struct MeditationIcon: View {
             Rectangle()
                 .frame(width: 75, height: 75)
             VStack(alignment: .leading, content: {
-                Text("tags")
+                Text("duration")
                     .foregroundStyle(.tertiary)
                 Text("Meditation Title")
                     .foregroundStyle(.primary)
@@ -76,5 +76,5 @@ struct MeditationIcon: View {
 }
 
 #Preview {
-    MainScreenView()
+    MainScreenView(time: 0)
 }

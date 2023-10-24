@@ -31,10 +31,12 @@ struct QuestionView: View {
 
            //button to the next page (main screen)
             NavigationLink("Find Recommendations") {
-                MainScreenView()
+                MainScreenView(time: selectedTime.timeInterval)
                     .environment(userInput)
                     .navigationTitle("Mindful Moments")
             }
+            .buttonStyle(.bordered)
+            .padding()
         }
     }
 }
