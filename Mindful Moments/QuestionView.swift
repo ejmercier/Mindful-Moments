@@ -14,6 +14,8 @@ class Time: ObservableObject {
 struct QuestionView: View {
     @ObservedObject private var selectedTime = Time()
     var name: String
+    @State var userInput = UserInputModel(name: "", feeling: "", time: 0)
+    @State private var selectedFeeling: String = ""
     
     var body: some View {
         VStack {
@@ -22,20 +24,23 @@ struct QuestionView: View {
                 .padding(.bottom)
                 .foregroundStyle(.gray)
             Text("How do you feel?").font(.system(size: 32))
-            FeelingPicker().padding(.bottom)
+            FeelingPicker(selectedFeeling: $userInput.feeling).padding(.bottom)
             Text("How much time do you have?").font(.system(size: 32))
+            //TODO: fix time picker to be able to add time to userinput
             TimePicker(countdownInterval: $selectedTime.timeInterval).padding(.bottom)
 
            //button to the next page (main screen)
             NavigationLink("Find Recommendations") {
-                MainScreenView(userInput: UserInputModel(name: name, feeling: "Happy", time: selectedTime.timeInterval))
+                MainScreenView()
+                    .environment(userInput)
                     .navigationTitle("Mindful Moments")
             }
         }
     }
 }
 
-struct UserInputModel {
+@Observable
+class UserInputModel {
     var name: String = ""
     var feeling: String = ""
     var time: TimeInterval = 0

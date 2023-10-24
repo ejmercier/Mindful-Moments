@@ -8,15 +8,28 @@
 import SwiftUI
 
 struct MainScreenView: View {
-    var userInput: UserInputModel
+    @Environment(UserInputModel.self) private var userInput: UserInputModel
     
     var body: some View {
-        HStack {
-            Text("Emotion: \(userInput.feeling)")
-            Spacer()
-            Text("Time: \(userInput.time) secs")
+        HStack (alignment: .top) {
+            VStack {
+                Text("Feeling Selected:")
+                FeelingsIcon(feeling: Feeling(name: userInput.feeling, emoji: userInput.feeling.emoji))
+                    .frame(width:105)
+                    .background(RoundedRectangle(cornerRadius: 25).fill(.background.secondary))
+            }
+            .padding()
+           
+            VStack {
+                Text("Time Selected:")
+                let timeInMin: Int = Int(userInput.time/60)
+                Text("\(timeInMin) mins")
+                    .frame(width: 90, height: 30)
+                    .background(RoundedRectangle(cornerRadius: 15).fill(.background.secondary))
+            }
+            .padding()
         }
-        .padding(.all, 25)
+        
         
         NavigationLink("Change selections", destination: QuestionView(name: userInput.name))
             .padding(.bottom, 30)
@@ -58,10 +71,10 @@ struct MeditationIcon: View {
         }
         .padding()
         .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
-        .background(Rectangle().fill(.background).shadow(radius: 3, x: 0, y:0))
+        .background(RoundedRectangle(cornerRadius: 15).fill(.background).shadow(radius: 2, x: 0, y:0))
     }
 }
 
 #Preview {
-    MainScreenView(userInput: UserInputModel(name: "Cathy", feeling: "Happy", time: 60))
+    MainScreenView()
 }
