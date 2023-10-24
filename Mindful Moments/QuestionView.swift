@@ -17,10 +17,14 @@ struct QuestionView: View {
     
     var body: some View {
         VStack {
-            Text("Hello \(name)")
-            Text("This is the Question Screen")
-            TimePicker(countdownInterval: $selectedTime.timeInterval)
-            Text("Selected Time Interval in seconds: \(selectedTime.timeInterval)")
+            Text("Hi \(name)!")
+                .font(.system(size: 28))
+                .padding(.bottom)
+                .foregroundStyle(.gray)
+            Text("How do you feel?").font(.system(size: 32))
+            FeelingPicker().padding(.bottom)
+            Text("How much time do you have?").font(.system(size: 32))
+            TimePicker(countdownInterval: $selectedTime.timeInterval).padding(.bottom)
 
            //button to the next page (main screen)
             NavigationLink("Find Recommendations") {
