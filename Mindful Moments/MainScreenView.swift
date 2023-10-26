@@ -10,6 +10,7 @@ import SwiftUI
 struct MainScreenView: View {
     @Environment(UserInputModel.self) private var userInput: UserInputModel
     var time: TimeInterval
+    let meditations: [Meditation] = [Meditation(title: "Daytime Meditation for Stress Relief", time: "2"), Meditation(title: "10-Minute Meditation For Anxiety", time: "2"), Meditation(title: "Meditation for Anxiety Relief", time: "2")]
     
     var body: some View {
         HStack (alignment: .top) {
@@ -41,9 +42,12 @@ struct MainScreenView: View {
                         .font(.title)
                     
                     VStack{
-                        ForEach(0..<7){ _ in
+                        ForEach(meditations, id: \.id) { meditation in
                             VStack {
-                                MeditationIcon()
+                                Button(action:{}) {
+                                    MeditationIcon(meditation: meditation)
+                                }
+                                .foregroundStyle(.black)
                         }.padding(.top, 15)
                     }
                 }
@@ -54,18 +58,40 @@ struct MainScreenView: View {
     }
 }
 
+//class openLink: UIViewController {
+//    @IBAction func openLinkButtonClicked(/*_ sender: UIButton*/) {
+//        if let url = URL(string: "https://www.google.com") {
+//            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//        }
+//    }
+//}
+
+class Meditation {
+    var id = UUID()
+    var title: String
+    var link: String?
+    var time: String
+    
+    init (title: String, time: String) {
+        self.title = title
+        self.time = time
+    }
+}
+
 struct MeditationIcon: View {
+    var meditation: Meditation
+    
     var body: some View {
         HStack {
             Rectangle()
                 .frame(width: 75, height: 75)
             VStack(alignment: .leading, content: {
-                Text("duration")
-                    .foregroundStyle(.tertiary)
-                Text("Meditation Title")
+//                Text("duration")
+//                    .foregroundStyle(.tertiary)
+                Text("\(meditation.title)")
                     .foregroundStyle(.primary)
                     .font(.title3)
-                Text("description")
+                Text("\(meditation.time)")
                     .foregroundStyle(.secondary)
             })
         }
