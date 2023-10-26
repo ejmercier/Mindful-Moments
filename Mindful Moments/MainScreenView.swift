@@ -10,7 +10,7 @@ import SwiftUI
 struct MainScreenView: View {
     @Environment(UserInputModel.self) private var userInput: UserInputModel
     var time: TimeInterval
-    let meditations: [Meditation] = [Meditation(title: "Daytime Meditation for Stress Relief", time: "22 min 13 sec"), Meditation(title: "10-Minute Meditation For Anxiety", time: "10 min 20 sec"), Meditation(title: "Meditation for Anxiety Relief", time: "3 min 4 sec")]
+    
     
     var body: some View {
         HStack (alignment: .top) {
@@ -36,25 +36,45 @@ struct MainScreenView: View {
             .padding(.bottom, 30)
         
         GeometryReader { geometry in
-                ScrollView(.vertical, showsIndicators: false){
+            ScrollView(.vertical, showsIndicators: false){
                     Text("Recomended Meditations")
                         .foregroundStyle(.primary)
                         .font(.title)
                     
                     VStack{
-                        ForEach(meditations, id: \.id) { meditation in
-                            VStack {
-                                Button(action:{}) {
-                                    MeditationIcon(meditation: meditation)
-                                }
-                                .foregroundStyle(.black)
-                        }.padding(.top, 15)
+                        
+                        Button(action:{}) {
+                            MeditationIcon(title: "Daytime Meditation for Stress Relief", time: "22 min 13 sec")
+                        }
+                            .foregroundStyle(.black)
+                            .padding(.top, 15)
+                            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                        
+                        Button(action:{}) {
+                            MeditationIcon(title: "10-Minute Meditation For Anxiety", time: "10 min 20 sec")
+                        }
+                            .foregroundStyle(.black)
+                            .padding(.top, 15)
+                        
+                        Button(action:{}) {
+                            MeditationIcon(title: "Meditation for Anxiety Relief", time: "3 min 4 sec")
+                        }
+                            .foregroundStyle(.black)
+                            .padding(.top, 15)
+                        
+//                        ForEach(meditations) { meditation in
+//                            VStack {
+//                                Button(action:{}) {
+//                                    MeditationIcon(meditation: meditation)
+//                                }
+//                                .foregroundStyle(.black)
+//                        }.padding(.top, 15)
                     }
                 }
-                    .frame(width: geometry.size.width)
-                    .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                .frame(width: geometry.size.width)
+                .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             }
-        }
+        
     }
 }
 
@@ -66,20 +86,22 @@ struct MainScreenView: View {
 //    }
 //}
 
-class Meditation {
-    var id = UUID()
-    var title: String
-    var link: String?
-    var time: String
-    
-    init (title: String, time: String) {
-        self.title = title
-        self.time = time
-    }
-}
+//struct Meditation: Identifiable {
+//    var id = UUID()
+//    var title: String
+////    var link: String?
+//    var time: String
+//    
+//    init (title: String, time: String) {
+//        self.title = title
+//        self.time = time
+//    }
+//}
 
 struct MeditationIcon: View {
-    var meditation: Meditation
+//    var meditation: Meditation
+    var title: String
+    var time: String
     
     var body: some View {
         HStack {
@@ -88,10 +110,10 @@ struct MeditationIcon: View {
             VStack(alignment: .leading, content: {
 //                Text("duration")
 //                    .foregroundStyle(.tertiary)
-                Text("\(meditation.title)")
+                Text("\(title)")
                     .foregroundStyle(.primary)
                     .font(.title3)
-                Text("\(meditation.time)")
+                Text("\(time)")
                     .foregroundStyle(.secondary)
             })
         }
