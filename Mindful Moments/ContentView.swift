@@ -28,11 +28,10 @@ struct ContentView: View {
                     QuestionView(name: givenName)
                         .navigationTitle("Mindful Moments")
                 }
-                .buttonStyle(.bordered)
-                .padding()
             }
             .padding()
         }
+        
     }
 }
 
