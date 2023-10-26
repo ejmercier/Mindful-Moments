@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FeelingPicker: View {
     let feelings: [Feeling] = [Feeling(name: "Happy", emoji: "😄"), Feeling(name: "Sad", emoji: "😢"), Feeling(name: "Stressed", emoji: "😓"), Feeling(name: "Angry", emoji: "😠"), Feeling(name: "Lonely", emoji: "😔"), Feeling(name: "Nervous", emoji: "😖")]
-    @State private var selectedFeeling: String?
+    @Binding var selectedFeeling: String
 
     var body: some View {
             ScrollView(.horizontal) {
@@ -17,9 +17,6 @@ struct FeelingPicker: View {
                     ForEach(feelings, id: \.id) { feeling in
                         Button(action: {self.selectedFeeling = feeling.name}) {
                             FeelingsIcon(feeling: feeling)
-                                .foregroundStyle(.black)
-                                .padding(.bottom, 6)
-                                .frame(width: 85, height: 80)
                         }
                         .buttonStyle(.bordered)
                         .background(
@@ -55,11 +52,35 @@ struct FeelingsIcon: View {
             Text("\(feeling.emoji)").font(.system(size: 40))
             Text("\(feeling.name)").font(.system(size: 20))
         }
+        .foregroundStyle(.black)
+        .padding(.bottom, 6)
+        .frame(width: 85, height: 80)
     }
 }
 
-struct FeelingPicker_Previews: PreviewProvider {
-    static var previews: some View {
-        FeelingPicker()
+extension String {
+    var emoji: String {
+        switch self {
+        case "Happy":
+            return "😄"
+        case "Sad":
+            return "😢"
+        case "Stressed":
+            return "😓"
+        case "Angry":
+            return "😠"
+        case "Lonely":
+            return "😔"
+        case "Nervous":
+            return "😖"
+        default:
+            return ""
+        }
     }
 }
+
+//struct FeelingPicker_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FeelingPicker()
+//    }
+//}

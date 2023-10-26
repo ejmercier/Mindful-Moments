@@ -14,8 +14,8 @@
 		022EEB862AD8628F001291B5 /* Mindful_MomentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022EEB852AD8628F001291B5 /* Mindful_MomentsTests.swift */; };
 		022EEB902AD8628F001291B5 /* Mindful_MomentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022EEB8F2AD8628F001291B5 /* Mindful_MomentsUITests.swift */; };
 		022EEB922AD8628F001291B5 /* Mindful_MomentsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022EEB912AD8628F001291B5 /* Mindful_MomentsUITestsLaunchTests.swift */; };
-		70AEE52B2ADDD80C003DA972 /* FeelingPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AEE52A2ADDD80C003DA972 /* FeelingPicker.swift */; };
 		70AEE5292ADC8A17003DA972 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AEE5282ADC8A17003DA972 /* TimePicker.swift */; };
+		70AEE52B2ADDD80C003DA972 /* FeelingPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AEE52A2ADDD80C003DA972 /* FeelingPicker.swift */; };
 		9FADFF5F2AD8B8170072F79B /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FADFF5E2AD8B8170072F79B /* QuestionView.swift */; };
 		9FBA5BAE2ADEE37F00331638 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA5BAD2ADEE37F00331638 /* MainScreenView.swift */; };
 /* End PBXBuildFile section */
@@ -49,8 +49,8 @@
 		022EEB8B2AD8628F001291B5 /* Mindful MomentsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mindful MomentsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		022EEB8F2AD8628F001291B5 /* Mindful_MomentsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mindful_MomentsUITests.swift; sourceTree = "<group>"; };
 		022EEB912AD8628F001291B5 /* Mindful_MomentsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mindful_MomentsUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		70AEE52A2ADDD80C003DA972 /* FeelingPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingPicker.swift; sourceTree = "<group>"; };
 		70AEE5282ADC8A17003DA972 /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
+		70AEE52A2ADDD80C003DA972 /* FeelingPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingPicker.swift; sourceTree = "<group>"; };
 		9FADFF5E2AD8B8170072F79B /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		9FBA5BAD2ADEE37F00331638 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -363,6 +363,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -415,6 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -445,7 +447,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -483,7 +485,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;

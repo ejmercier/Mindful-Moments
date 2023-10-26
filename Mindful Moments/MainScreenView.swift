@@ -8,28 +8,37 @@
 import SwiftUI
 
 struct MainScreenView: View {
-    var feeling: String
-    var time: String
+    @Environment(UserInputModel.self) private var userInput: UserInputModel
+    var time: TimeInterval
     
     var body: some View {
-        HStack {
-            Text("Emotion: \(feeling)")
-            Spacer()
-            Text("Time: \(time) mins")
+        HStack (alignment: .top) {
+            VStack {
+                Text("Feeling Selected:")
+                FeelingsIcon(feeling: Feeling(name: userInput.feeling, emoji: userInput.feeling.emoji))
+                    .frame(width:105)
+                    .background(RoundedRectangle(cornerRadius: 25).fill(.background.secondary))
+            }
+            .padding()
+
+            VStack {
+                Text("Time Selected:")
+                let timeInMin: Int = Int(time/60)
+                Text("\(timeInMin) mins")
+                    .frame(width: 90, height: 30)
+                    .background(RoundedRectangle(cornerRadius: 15).fill(.background.secondary))
+            }
+            .padding()
         }
-        .padding(.all, 25)
-        
-        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-            Text("Change selections")
-        })
-        .padding(.bottom, 30)
-        
-        Text("Recomended Meditations")
-            .foregroundStyle(.primary)
-            .font(.title)
-        
+        NavigationLink("Change selections", destination: QuestionView(name: userInput.name))
+            .padding(.bottom, 30)
+
         GeometryReader { geometry in
                 ScrollView(.vertical, showsIndicators: false){
+                    Text("Recomended Meditations")
+                        .foregroundStyle(.primary)
+                        .font(.title)
+
                     VStack{
                         ForEach(0..<7){ _ in
                             VStack {
@@ -50,7 +59,7 @@ struct MeditationIcon: View {
             Rectangle()
                 .frame(width: 75, height: 75)
             VStack(alignment: .leading, content: {
-                Text("tags")
+                Text("duration")
                     .foregroundStyle(.tertiary)
                 Text("Meditation Title")
                     .foregroundStyle(.primary)
@@ -61,10 +70,10 @@ struct MeditationIcon: View {
         }
         .padding()
         .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
-        .background(Rectangle().fill(.background).shadow(radius: 3, x: 0, y:0))
+        .background(RoundedRectangle(cornerRadius: 15).fill(.background).shadow(radius: 2, x: 0, y:0))
     }
 }
 
 #Preview {
-    MainScreenView(feeling: "Happy", time: "30")
+    MainScreenView(time: 0)
 }
