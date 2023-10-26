@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020025F72AE2C70500E0C589 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020025F62AE2C70500E0C589 /* DataModel.swift */; };
 		022EEB742AD86289001291B5 /* Mindful_MomentsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022EEB732AD86289001291B5 /* Mindful_MomentsApp.swift */; };
 		022EEB762AD86289001291B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022EEB752AD86289001291B5 /* ContentView.swift */; };
 		022EEB782AD8628F001291B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 022EEB772AD8628F001291B5 /* Assets.xcassets */; };
@@ -14,6 +15,10 @@
 		022EEB862AD8628F001291B5 /* Mindful_MomentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022EEB852AD8628F001291B5 /* Mindful_MomentsTests.swift */; };
 		022EEB902AD8628F001291B5 /* Mindful_MomentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022EEB8F2AD8628F001291B5 /* Mindful_MomentsUITests.swift */; };
 		022EEB922AD8628F001291B5 /* Mindful_MomentsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022EEB912AD8628F001291B5 /* Mindful_MomentsUITestsLaunchTests.swift */; };
+		02A60D812AE1BAEF00F8B592 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A60D802AE1BAEF00F8B592 /* API.swift */; };
+		65CDB19A7B50FF0FB5E8181D /* Pods_Mindful_Moments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9453D2D813A86D065E19E582 /* Pods_Mindful_Moments.framework */; };
+		69144286B4E3C20E52CC0E93 /* Pods_Mindful_MomentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8EA6209DC045402BB85E63A /* Pods_Mindful_MomentsTests.framework */; };
+		6DAC222735C7FCD930F022BF /* Pods_Mindful_Moments_Mindful_MomentsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3486229DB892EAC3D72F70CC /* Pods_Mindful_Moments_Mindful_MomentsUITests.framework */; };
 		70AEE5292ADC8A17003DA972 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AEE5282ADC8A17003DA972 /* TimePicker.swift */; };
 		9FADFF5F2AD8B8170072F79B /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FADFF5E2AD8B8170072F79B /* QuestionView.swift */; };
 		9FBA5BAE2ADEE37F00331638 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBA5BAD2ADEE37F00331638 /* MainScreenView.swift */; };
@@ -37,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		020025F62AE2C70500E0C589 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		022EEB702AD86289001291B5 /* Mindful Moments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mindful Moments.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		022EEB732AD86289001291B5 /* Mindful_MomentsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mindful_MomentsApp.swift; sourceTree = "<group>"; };
 		022EEB752AD86289001291B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,9 +54,19 @@
 		022EEB8B2AD8628F001291B5 /* Mindful MomentsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mindful MomentsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		022EEB8F2AD8628F001291B5 /* Mindful_MomentsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mindful_MomentsUITests.swift; sourceTree = "<group>"; };
 		022EEB912AD8628F001291B5 /* Mindful_MomentsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mindful_MomentsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		02A60D802AE1BAEF00F8B592 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		1B528480786ABB962896D0C5 /* Pods-Mindful MomentsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mindful MomentsTests.release.xcconfig"; path = "Target Support Files/Pods-Mindful MomentsTests/Pods-Mindful MomentsTests.release.xcconfig"; sourceTree = "<group>"; };
+		2F9DBBD93CE4A27D0812E0FC /* Pods-Mindful Moments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mindful Moments.release.xcconfig"; path = "Target Support Files/Pods-Mindful Moments/Pods-Mindful Moments.release.xcconfig"; sourceTree = "<group>"; };
+		3486229DB892EAC3D72F70CC /* Pods_Mindful_Moments_Mindful_MomentsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mindful_Moments_Mindful_MomentsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		556965264A696D843B8C880F /* Pods-Mindful Moments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mindful Moments.debug.xcconfig"; path = "Target Support Files/Pods-Mindful Moments/Pods-Mindful Moments.debug.xcconfig"; sourceTree = "<group>"; };
+		664729146F2FE0615359DF19 /* Pods-Mindful MomentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mindful MomentsTests.debug.xcconfig"; path = "Target Support Files/Pods-Mindful MomentsTests/Pods-Mindful MomentsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		70AEE5282ADC8A17003DA972 /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
+		9453D2D813A86D065E19E582 /* Pods_Mindful_Moments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mindful_Moments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		962D809310E874341EF3878A /* Pods-Mindful Moments-Mindful MomentsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mindful Moments-Mindful MomentsUITests.release.xcconfig"; path = "Target Support Files/Pods-Mindful Moments-Mindful MomentsUITests/Pods-Mindful Moments-Mindful MomentsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9FADFF5E2AD8B8170072F79B /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		9FBA5BAD2ADEE37F00331638 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
+		B3E3079CB8016C7098C4644E /* Pods-Mindful Moments-Mindful MomentsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mindful Moments-Mindful MomentsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mindful Moments-Mindful MomentsUITests/Pods-Mindful Moments-Mindful MomentsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F8EA6209DC045402BB85E63A /* Pods_Mindful_MomentsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mindful_MomentsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65CDB19A7B50FF0FB5E8181D /* Pods_Mindful_Moments.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69144286B4E3C20E52CC0E93 /* Pods_Mindful_MomentsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DAC222735C7FCD930F022BF /* Pods_Mindful_Moments_Mindful_MomentsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +104,8 @@
 				022EEB842AD8628F001291B5 /* Mindful MomentsTests */,
 				022EEB8E2AD8628F001291B5 /* Mindful MomentsUITests */,
 				022EEB712AD86289001291B5 /* Products */,
+				4357FBC461BF3C6B2BA05D30 /* Pods */,
+				BAFE78C463D4EBE66DF02A10 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				022EEB732AD86289001291B5 /* Mindful_MomentsApp.swift */,
+				02A60D802AE1BAEF00F8B592 /* API.swift */,
+				020025F62AE2C70500E0C589 /* DataModel.swift */,
 				022EEB752AD86289001291B5 /* ContentView.swift */,
 				9FADFF5E2AD8B8170072F79B /* QuestionView.swift */,
 				9FBA5BAD2ADEE37F00331638 /* MainScreenView.swift */,
@@ -138,6 +161,29 @@
 			path = "Mindful MomentsUITests";
 			sourceTree = "<group>";
 		};
+		4357FBC461BF3C6B2BA05D30 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				556965264A696D843B8C880F /* Pods-Mindful Moments.debug.xcconfig */,
+				2F9DBBD93CE4A27D0812E0FC /* Pods-Mindful Moments.release.xcconfig */,
+				B3E3079CB8016C7098C4644E /* Pods-Mindful Moments-Mindful MomentsUITests.debug.xcconfig */,
+				962D809310E874341EF3878A /* Pods-Mindful Moments-Mindful MomentsUITests.release.xcconfig */,
+				664729146F2FE0615359DF19 /* Pods-Mindful MomentsTests.debug.xcconfig */,
+				1B528480786ABB962896D0C5 /* Pods-Mindful MomentsTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BAFE78C463D4EBE66DF02A10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9453D2D813A86D065E19E582 /* Pods_Mindful_Moments.framework */,
+				3486229DB892EAC3D72F70CC /* Pods_Mindful_Moments_Mindful_MomentsUITests.framework */,
+				F8EA6209DC045402BB85E63A /* Pods_Mindful_MomentsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,9 +191,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 022EEB952AD8628F001291B5 /* Build configuration list for PBXNativeTarget "Mindful Moments" */;
 			buildPhases = (
+				699A81DE982086EA565EB379 /* [CP] Check Pods Manifest.lock */,
 				022EEB6C2AD86289001291B5 /* Sources */,
 				022EEB6D2AD86289001291B5 /* Frameworks */,
 				022EEB6E2AD86289001291B5 /* Resources */,
+				51DDC48B16BA04D1C1F2A39A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,6 +210,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 022EEB982AD8628F001291B5 /* Build configuration list for PBXNativeTarget "Mindful MomentsTests" */;
 			buildPhases = (
+				63B8935C399CCDB343244B5F /* [CP] Check Pods Manifest.lock */,
 				022EEB7D2AD8628F001291B5 /* Sources */,
 				022EEB7E2AD8628F001291B5 /* Frameworks */,
 				022EEB7F2AD8628F001291B5 /* Resources */,
@@ -180,9 +229,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 022EEB9B2AD8628F001291B5 /* Build configuration list for PBXNativeTarget "Mindful MomentsUITests" */;
 			buildPhases = (
+				68090EE788621B783E1A9C41 /* [CP] Check Pods Manifest.lock */,
 				022EEB872AD8628F001291B5 /* Sources */,
 				022EEB882AD8628F001291B5 /* Frameworks */,
 				022EEB892AD8628F001291B5 /* Resources */,
+				90DC60FC8A484C5C34B87532 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -218,7 +269,7 @@
 				};
 			};
 			buildConfigurationList = 022EEB6B2AD86289001291B5 /* Build configuration list for PBXProject "Mindful Moments" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -263,15 +314,120 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		51DDC48B16BA04D1C1F2A39A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mindful Moments/Pods-Mindful Moments-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mindful Moments/Pods-Mindful Moments-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mindful Moments/Pods-Mindful Moments-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63B8935C399CCDB343244B5F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mindful MomentsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68090EE788621B783E1A9C41 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mindful Moments-Mindful MomentsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		699A81DE982086EA565EB379 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mindful Moments-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90DC60FC8A484C5C34B87532 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mindful Moments-Mindful MomentsUITests/Pods-Mindful Moments-Mindful MomentsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mindful Moments-Mindful MomentsUITests/Pods-Mindful Moments-Mindful MomentsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mindful Moments-Mindful MomentsUITests/Pods-Mindful Moments-Mindful MomentsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		022EEB6C2AD86289001291B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				020025F72AE2C70500E0C589 /* DataModel.swift in Sources */,
 				022EEB762AD86289001291B5 /* ContentView.swift in Sources */,
 				9FADFF5F2AD8B8170072F79B /* QuestionView.swift in Sources */,
 				022EEB742AD86289001291B5 /* Mindful_MomentsApp.swift in Sources */,
 				9FBA5BAE2ADEE37F00331638 /* MainScreenView.swift in Sources */,
+				02A60D812AE1BAEF00F8B592 /* API.swift in Sources */,
 				70AEE5292ADC8A17003DA972 /* TimePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,9 +515,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -411,8 +569,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -420,6 +580,7 @@
 		};
 		022EEB962AD8628F001291B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 556965264A696D843B8C880F /* Pods-Mindful Moments.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -441,7 +602,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -458,6 +619,7 @@
 		};
 		022EEB972AD8628F001291B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F9DBBD93CE4A27D0812E0FC /* Pods-Mindful Moments.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -479,7 +641,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
@@ -496,6 +658,7 @@
 		};
 		022EEB992AD8628F001291B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 664729146F2FE0615359DF19 /* Pods-Mindful MomentsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -519,6 +682,7 @@
 		};
 		022EEB9A2AD8628F001291B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B528480786ABB962896D0C5 /* Pods-Mindful MomentsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -542,6 +706,7 @@
 		};
 		022EEB9C2AD8628F001291B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3E3079CB8016C7098C4644E /* Pods-Mindful Moments-Mindful MomentsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -564,6 +729,7 @@
 		};
 		022EEB9D2AD8628F001291B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 962D809310E874341EF3878A /* Pods-Mindful Moments-Mindful MomentsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

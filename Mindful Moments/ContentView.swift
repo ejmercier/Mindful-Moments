@@ -27,13 +27,17 @@ struct ContentView: View {
                 NavigationLink("Submit") {
                     QuestionView(name: givenName)
                         .navigationTitle("Mindful Moments")
+                        .onAppear {
+                            // Call your function here
+                            API(url: "https://example.com")
+                            }
+                        }
                 }
             }
             .padding()
         }
         
     }
-}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

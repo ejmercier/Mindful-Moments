@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4A69BA9E-C7B7-4870-B893-6419A7C37A1C"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F8A08CDD-69E6-44CC-80BA-C9340FDC3587"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mindful Moments/QuestionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55">
+            <Locations>
+               <Location
+                  uuid = "F8A08CDD-69E6-44CC-80BA-C9340FDC3587 - 3f92baec99ec8fe1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Mindful_Moments.fetchMoviesFromAPI() async throws -&gt; Swift.Array&lt;Mindful_Moments.Dog&gt;"
+                  moduleName = "Mindful Moments"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user247884/Desktop/Mindful%20Moments/Mindful%20Moments/QuestionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "328">
+               </Location>
+               <Location
+                  uuid = "F8A08CDD-69E6-44CC-80BA-C9340FDC3587 - fef315b957296093"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for Mindful_Moments.fetchMoviesFromAPI() async throws -&gt; Swift.Array&lt;Mindful_Moments.Dog&gt;"
+                  moduleName = "Mindful Moments"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user247884/Desktop/Mindful%20Moments/Mindful%20Moments/QuestionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "F8A08CDD-69E6-44CC-80BA-C9340FDC3587 - d3276700ffb54be3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Mindful_Moments.fetchMoviesFromAPI() async throws -&gt; Swift.Array&lt;Mindful_Moments.Dog&gt;"
+                  moduleName = "Mindful Moments"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user247884/Desktop/Mindful%20Moments/Mindful%20Moments/QuestionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "F8A08CDD-69E6-44CC-80BA-C9340FDC3587 - 18fe7d7732a6e9ec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for Mindful_Moments.fetchMoviesFromAPI() async throws -&gt; Swift.Array&lt;Mindful_Moments.Dog&gt;"
+                  moduleName = "Mindful Moments"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user247884/Desktop/Mindful%20Moments/Mindful%20Moments/QuestionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5FA2EB7-05FA-43D8-8357-240E21778A05"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Mindful Moments/QuestionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
