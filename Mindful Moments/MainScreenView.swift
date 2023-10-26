@@ -10,7 +10,7 @@ import SwiftUI
 struct MainScreenView: View {
     @Environment(UserInputModel.self) private var userInput: UserInputModel
     var time: TimeInterval
-    let meditations: [Meditation] = [Meditation(title: "Daytime Meditation for Stress Relief", time: "2"), Meditation(title: "10-Minute Meditation For Anxiety", time: "2"), Meditation(title: "Meditation for Anxiety Relief", time: "2")]
+    let meditations: [Meditation] = [Meditation(title: "Daytime Meditation for Stress Relief", time: "22 min 13 sec"), Meditation(title: "10-Minute Meditation For Anxiety", time: "10 min 20 sec"), Meditation(title: "Meditation for Anxiety Relief", time: "3 min 4 sec")]
     
     var body: some View {
         HStack (alignment: .top) {
