@@ -22,8 +22,7 @@ struct API: View {
                 Spacer()
                 
                 Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
-                    var a = loadSongDetails()
-                    print(a)
+                    loadData()
                 }
             }
                 .contentShape(Rectangle())
@@ -32,61 +31,79 @@ struct API: View {
         .padding(.top)
         }
     
-    private func loadSongDetails() -> AnyPublisher<[Episode], Error>{
-        loadData()
-            .flatMap{ response in
-                loadEpisodes(response: response)
-            }.eraseToAnyPublisher()
-    }
-    private func loadData() -> AnyPublisher<Response, Error> {
-        let url = URL(string: "https://accounts.spotify.com/api/token")!
-        return URLSession.shared.dataTaskPublisher(for: url)
-            .tryMap { result in
-                guard let httpResponse = result.response as? HTTPURLResponse,
-                      httpResponse.statusCode == 200 else{
-                    throw URLError(.badServerResponse)
-                }
-                return result.data
-            }
-            .decode(type: Response.self, decoder: JSONDecoder())
-            .eraseToAnyPublisher()
-    }
-    
-    private func loadEpisodes(response: Response) -> AnyPublisher<[Episode], Error> {
-        let url = URL(string: "https://accounts.spotify.com/api/token")!
-        return URLSession.shared.dataTaskPublisher(for: url)
-            .tryMap { result in
-                guard let httpResponse = result.response as? HTTPURLResponse,
-                      httpResponse.statusCode == 200 else{
-                    throw URLError(.badServerResponse)
-                }
-                return result.data
-            }
-            .decode(type: [Episode].self, decoder: JSONDecoder())
-            .eraseToAnyPublisher()
-    }
+//    private func loadSongDetails() -> AnyPublisher<[Episode], Error>{
+//        loadData().flatMap(loadEpisodes).eraseToAnyPublisher()
+//    }
+//    private func loadData() -> AnyPublisher<Response, Error> {
 //        let parameters = "client_id=8e0cf38431f8459d9756f6db7e26c677&client_secret=c61f6986d0e34e94b61725d249571334&grant_type=client_credentials"
 //        let postData =  parameters.data(using: .utf8)
-//
+//    
 //        var request = URLRequest(url: URL(string: "https://accounts.spotify.com/api/token")!,timeoutInterval: Double.infinity)
 //        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-//
+//       
 //        request.httpMethod = "POST"
 //        request.httpBody = postData
-//
-//        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-//          guard let data = data else {
-//            print(String(describing: error))
-//            return
-//          }
-//            if let decodedData = try?
-//                JSONDecoder().decode(Response.self, from: data)
-//                {
-//                    print(String(data: data, encoding: .utf8)!)
-//                }
-//        }
-//        task.resume()
+//        return URLSession.shared.dataTaskPublisher(for: request)
+//            .map(\.data)
+//            .decode(type: Response.self, decoder: JSONDecoder())
+//            .print("Decode Result")
+//            .eraseToAnyPublisher()
 //    }
+//    
+//    private func loadEpisodes(response: Response) -> AnyPublisher<[Episode], Error> {
+//        let url = URL(string: "https://accounts.spotify.com/api/token")!
+//        return URLSession.shared.dataTaskPublisher(for: url)
+//            .tryMap { result in
+//                guard let httpResponse = result.response as? HTTPURLResponse,
+//                      httpResponse.statusCode == 200 else{
+//                    throw URLError(.badServerResponse)
+//                }
+//                return result.data
+//            }
+//            .decode(type: [Episode].self, decoder: JSONDecoder())
+//            .eraseToAnyPublisher()
+//    }
+    private func loadData(){
+        let parameters = "client_id=8e0cf38431f8459d9756f6db7e26c677&client_secret=c61f6986d0e34e94b61725d249571334&grant_type=client_credentials"
+        let postData =  parameters.data(using: .utf8)
+
+        var request = URLRequest(url: URL(string: "https://accounts.spotify.com/api/token")!,timeoutInterval: Double.infinity)
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+
+        request.httpMethod = "POST"
+        request.httpBody = postData
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+          guard let data = data else {
+            print(String(describing: error))
+            return
+          }
+            if let decodedData = try?
+                JSONDecoder().decode(Response.self, from: data)
+                {
+                loadSongs(accesstoken: decodedData.access_token)
+                print(decodedData.access_token)
+                print(String(data: data, encoding: .utf8)!)
+                }
+        }
+        task.resume()
+    }
+    private func loadSongs(accesstoken: String) {
+        var request = URLRequest(url: URL(string: "https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy")!,timeoutInterval: Double.infinity)
+        request.addValue("Bearer " + accesstoken, forHTTPHeaderField: "Authorization")
+
+        request.httpMethod = "GET"
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+          guard let data = data else {
+            print(String(describing: error))
+            return
+          }
+          print(String(data: data, encoding: .utf8)!)
+        }
+
+        task.resume()
+    }
 }
 struct Response: Decodable {
     var access_token: String
