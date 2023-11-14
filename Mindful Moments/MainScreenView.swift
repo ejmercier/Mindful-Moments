@@ -41,18 +41,17 @@ struct MainScreenView: View {
                         .font(.title)
                     
                     VStack{
-                        ForEach(0..<7){ _ in
-                            VStack {
-                                MeditationIcon()
-                        }.padding(.top, 15)
+                        API()
+                        API()
+                        API()
+                        API()
                     }
                 }
                     .frame(width: geometry.size.width)
-                    .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                    .edgesIgnoringSafeArea(.all)
             }
         }
     }
-}
 
 struct MeditationIcon: View {
     var body: some View {

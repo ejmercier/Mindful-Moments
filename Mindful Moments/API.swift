@@ -12,57 +12,37 @@ import Combine
 struct API: View {
     
     @State private var keyResponse: Response?
+    @State private var image: String = ""
+    @State private var name: String = ""
+    @State private var description: String = ""
     
-    var body: some View{
-        HStack{
-            VStack(alignment: .trailing)
-            {
-                Spacer()
-                Text(keyResponse?.access_token ?? "test")
-                Spacer()
+        var body: some View{
+        HStack(alignment: .top, spacing: 10) {
+            
+            AsyncImage(
+                url: URL(string: image),
+                content: { image in
+                    image.resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: 100, maxHeight: 100)
+                            .clipShape(RoundedRectangle(cornerRadius: 5))
+                            },
+                            placeholder: {
+                                ProgressView()
+                            }
+                        )
+            VStack(alignment: .leading, spacing: 5){
+                Text(name)
                 
-                Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
-                    loadData()
-                }
+                Text(description)
+                    .font(.caption)
+                    .frame(maxHeight: 65)
             }
-                .contentShape(Rectangle())
-            }
-        .multilineTextAlignment(.trailing)
-        .padding(.top)
-        }
-    
-//    private func loadSongDetails() -> AnyPublisher<[Episode], Error>{
-//        loadData().flatMap(loadEpisodes).eraseToAnyPublisher()
-//    }
-//    private func loadData() -> AnyPublisher<Response, Error> {
-//        let parameters = "client_id=8e0cf38431f8459d9756f6db7e26c677&client_secret=c61f6986d0e34e94b61725d249571334&grant_type=client_credentials"
-//        let postData =  parameters.data(using: .utf8)
-//    
-//        var request = URLRequest(url: URL(string: "https://accounts.spotify.com/api/token")!,timeoutInterval: Double.infinity)
-//        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-//       
-//        request.httpMethod = "POST"
-//        request.httpBody = postData
-//        return URLSession.shared.dataTaskPublisher(for: request)
-//            .map(\.data)
-//            .decode(type: Response.self, decoder: JSONDecoder())
-//            .print("Decode Result")
-//            .eraseToAnyPublisher()
-//    }
-//    
-//    private func loadEpisodes(response: Response) -> AnyPublisher<[Episode], Error> {
-//        let url = URL(string: "https://accounts.spotify.com/api/token")!
-//        return URLSession.shared.dataTaskPublisher(for: url)
-//            .tryMap { result in
-//                guard let httpResponse = result.response as? HTTPURLResponse,
-//                      httpResponse.statusCode == 200 else{
-//                    throw URLError(.badServerResponse)
-//                }
-//                return result.data
-//            }
-//            .decode(type: [Episode].self, decoder: JSONDecoder())
-//            .eraseToAnyPublisher()
-//    }
+            .padding(.trailing, 10)
+            .padding(.vertical, 10)
+        }.onAppear{self.loadData()}
+    }
+
     private func loadData(){
         let parameters = "client_id=8e0cf38431f8459d9756f6db7e26c677&client_secret=c61f6986d0e34e94b61725d249571334&grant_type=client_credentials"
         let postData =  parameters.data(using: .utf8)
@@ -89,7 +69,7 @@ struct API: View {
         task.resume()
     }
     private func loadSongs(accesstoken: String) {
-        var request = URLRequest(url: URL(string: "https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy")!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: "https://api.spotify.com/v1/shows/6rmydpcCvLzN4744S1fCsW")!,timeoutInterval: Double.infinity)
         request.addValue("Bearer " + accesstoken, forHTTPHeaderField: "Authorization")
 
         request.httpMethod = "GET"
@@ -99,7 +79,16 @@ struct API: View {
             print(String(describing: error))
             return
           }
-          print(String(data: data, encoding: .utf8)!)
+            if let decodedData = try?
+                JSONDecoder().decode(Episode.self, from: data)
+                {
+                name = decodedData.name
+                description = decodedData.description
+                image = decodedData.images[0].url
+                print(decodedData.images[0].url)
+                print("test")
+                }
+            //print(String(data: data, encoding: .utf8)!)
         }
 
         task.resume()
@@ -111,21 +100,35 @@ struct Response: Decodable {
     var expires_in: Int
 }
 struct Episode: Decodable{
+    var name: String
     var description: String
-    var html_description: String
-    var duration_ms: Int
-    var explicit: Bool
-    var href: String
-    var id: String
     var images: [Image]
+    //var episodes: Episodes
 }
 struct Image: Decodable{
     var url: String
     var height: Int
     var width: Int
 }
+struct Episodes: Decodable{
+    var href: String
+    var items: Items
+}
+struct Items: Decodable{
+    var href: String
+    var external_urls: EURL
+}
+struct EURL: Decodable{
+    var spotify: String
+}
 struct API_Previews: PreviewProvider {
     static var previews: some View {
-        API()
+        VStack(alignment: .leading){
+            API()
+            API()
+            API()
+            API()
+        }
+        .padding()
     }
 }

@@ -11,8 +11,7 @@ import SwiftUI
 struct Mindful_MomentsApp: App {
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-            API()
+            ContentView()
         }
     }
 }
