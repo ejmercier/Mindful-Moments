@@ -37,13 +37,14 @@ struct API: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(maxWidth: 100, maxHeight: 100)
                             .clipShape(RoundedRectangle(cornerRadius: 5))
-                            .onTapGesture{self.openURL()}
+                            .padding(EdgeInsets(top:0, leading:10, bottom:0, trailing:0))
                     },
                     placeholder: {
                         ProgressView()
                     }
                 )
                 Text(duration)
+                    .padding(EdgeInsets(top:0, leading:15, bottom:10, trailing:0))
             }
             VStack(alignment: .leading, spacing: 5){
                 Text(name)
@@ -55,7 +56,11 @@ struct API: View {
             }
             .padding(.trailing, 10)
             .padding(.vertical, 10)
-        }.onAppear{self.loadData()}
+        }
+        .onAppear{self.loadData()}
+        .onTapGesture{self.openURL()}
+        .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
+        .background(RoundedRectangle(cornerRadius: 15).fill(.background).shadow(radius: 2, x: 0, y:0))
     }
     
     private func loadData(){
