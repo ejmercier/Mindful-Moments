@@ -10,7 +10,6 @@ import SwiftUI
 struct MainScreenView: View {
     @Environment(UserInputModel.self) private var userInput: UserInputModel
     var time: TimeInterval
-    
     var body: some View {
         HStack (alignment: .top) {
             VStack {
@@ -41,10 +40,10 @@ struct MainScreenView: View {
                         .font(.title)
                     
                     VStack{
-                        API()
-                        API()
-                        API()
-                        API()
+                        API(ufeeling: userInput.feeling)
+                        API(ufeeling: userInput.feeling)
+                        API(ufeeling: userInput.feeling)
+                        API(ufeeling: userInput.feeling)
                     }
                 }
                     .frame(width: geometry.size.width)

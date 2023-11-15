@@ -15,25 +15,34 @@ struct API: View {
     @State private var image: String = ""
     @State private var name: String = ""
     @State private var description: String = ""
+    @State private var duration: String = ""
+    @State private var feeling: String
+    
+    init(ufeeling: String) {
+            self.feeling = ufeeling
+        }
     
     var body: some View{
         HStack(alignment: .top, spacing: 10) {
-            
-            AsyncImage(
-                url: URL(string: image),
-                content: { image in
-                    image.resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(maxWidth: 100, maxHeight: 100)
-                        .clipShape(RoundedRectangle(cornerRadius: 5))
-                        .onTapGesture{self.openURL()}
-                },
-                placeholder: {
-                    ProgressView()
-                }
-            )
+            VStack(alignment: .leading, spacing: 5){
+                AsyncImage(
+                    url: URL(string: image),
+                    content: { image in
+                        image.resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: 100, maxHeight: 100)
+                            .clipShape(RoundedRectangle(cornerRadius: 5))
+                            .onTapGesture{self.openURL()}
+                    },
+                    placeholder: {
+                        ProgressView()
+                    }
+                )
+                Text(duration)
+            }
             VStack(alignment: .leading, spacing: 5){
                 Text(name)
+                    .frame(maxHeight: 20)
                 
                 Text(description)
                     .font(.caption)
@@ -70,24 +79,26 @@ struct API: View {
         task.resume()
     }
     private func loadSongs(accesstoken: String) {
-        var request = URLRequest(url: URL(string: "https://api.spotify.com/v1/shows/6rmydpcCvLzN4744S1fCsW")!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: "https://api.spotify.com/v1/search?q=5+min+meditation+for+\(feeling)&type=episode&market=ES")!,timeoutInterval: Double.infinity)
         request.addValue("Bearer " + accesstoken, forHTTPHeaderField: "Authorization")
         
         request.httpMethod = "GET"
-        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data else {
                 print(String(describing: error))
                 return
             }
             if let decodedData = try?
-                JSONDecoder().decode(Episode.self, from: data)
+                JSONDecoder().decode(Objects.self, from: data)
             {
-                name = decodedData.name
-                description = decodedData.description
-                image = decodedData.images[0].url
-                print(decodedData.images[0].url)
-                print("test")
+                print("made it")
+                var duration_ms = decodedData.episodes.items[0].duration_ms / 1000
+                let (minutes, remainingSeconds) = secondsToMinutesAndSeconds(seconds: duration_ms)
+                duration = String(minutes) + " min " + String(remainingSeconds) + " sec"
+                name = decodedData.episodes.items[0].name
+                description = decodedData.episodes.items[0].description
+                image = decodedData.episodes.items[0].images[0].url
+                print(decodedData.episodes.items[0].images[0].url)
             }
             //print(String(data: data, encoding: .utf8)!)
         }
@@ -95,9 +106,14 @@ struct API: View {
         task.resume()
     }
     private func openURL() {
-        if let url = URL(string: "https://open.spotify.com/show/6rmydpcCvLzN4744S1fCsW") {
+        if let url = URL(string: "https://api.spotify.com/v1/search?q=5+min+meditation+for+\(feeling)&type=episode&market=ES") {
             UIApplication.shared.open(url)
         }
+    }
+    func secondsToMinutesAndSeconds(seconds: Int) -> (minutes: Int, seconds: Int) {
+        let minutes = seconds / 60
+        let remainingSeconds = seconds % 60
+        return (minutes, remainingSeconds)
     }
 }
 struct Response: Decodable {
@@ -105,35 +121,37 @@ struct Response: Decodable {
     var token_type: String
     var expires_in: Int
 }
-struct Episode: Decodable{
+
+struct Objects: Decodable{
+    var episodes: Episodes
+}
+
+struct Episodes: Decodable{
+    var items: [Items]
+}
+
+struct Items: Decodable{
+    var duration_ms: Int
     var name: String
     var description: String
+    var href: String
+    var external_urls: External_urls
     var images: [Image]
-    //var episodes: Episodes
 }
+
 struct Image: Decodable{
     var url: String
     var height: Int
     var width: Int
 }
-struct Episodes: Decodable{
-    var href: String
-    var items: Items
-}
-struct Items: Decodable{
-    var href: String
-    var external_urls: EURL
-}
-struct EURL: Decodable{
+
+struct External_urls: Decodable{
     var spotify: String
 }
 struct API_Previews: PreviewProvider {
     static var previews: some View {
         VStack(alignment: .leading){
-            API()
-            API()
-            API()
-            API()
+            API(ufeeling: "moist")
         }
         .padding()
     }
