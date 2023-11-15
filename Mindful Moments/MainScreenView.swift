@@ -40,10 +40,10 @@ struct MainScreenView: View {
                         .font(.title)
                     
                     VStack{
-                        API(ufeeling: userInput.feeling)
-                        API(ufeeling: userInput.feeling)
-                        API(ufeeling: userInput.feeling)
-                        API(ufeeling: userInput.feeling)
+                        API(ufeeling: userInput.feeling, index: 0)
+                        API(ufeeling: userInput.feeling, index: 1)
+                        API(ufeeling: userInput.feeling, index: 2)
+                        API(ufeeling: userInput.feeling, index: 3)
                     }
                 }
                     .frame(width: geometry.size.width)

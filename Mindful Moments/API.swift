@@ -17,9 +17,11 @@ struct API: View {
     @State private var description: String = ""
     @State private var duration: String = ""
     @State private var feeling: String
+    @State private var index: Int
     
-    init(ufeeling: String) {
+    init(ufeeling: String, index: Int) {
             self.feeling = ufeeling
+            self.index = index
         }
     
     var body: some View{
@@ -79,7 +81,7 @@ struct API: View {
         task.resume()
     }
     private func loadSongs(accesstoken: String) {
-        var request = URLRequest(url: URL(string: "https://api.spotify.com/v1/search?q=5+min+meditation+for+\(feeling)&type=episode&market=ES")!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: "https://api.spotify.com/v1/search?q=5+min+meditation+for+\(feeling)&type=episode&market=ES&limit=5")!,timeoutInterval: Double.infinity)
         request.addValue("Bearer " + accesstoken, forHTTPHeaderField: "Authorization")
         
         request.httpMethod = "GET"
@@ -92,13 +94,12 @@ struct API: View {
                 JSONDecoder().decode(Objects.self, from: data)
             {
                 print("made it")
-                var duration_ms = decodedData.episodes.items[0].duration_ms / 1000
+                var duration_ms = decodedData.episodes.items[index].duration_ms / 1000
                 let (minutes, remainingSeconds) = secondsToMinutesAndSeconds(seconds: duration_ms)
                 duration = String(minutes) + " min " + String(remainingSeconds) + " sec"
-                name = decodedData.episodes.items[0].name
-                description = decodedData.episodes.items[0].description
-                image = decodedData.episodes.items[0].images[0].url
-                print(decodedData.episodes.items[0].images[0].url)
+                name = decodedData.episodes.items[index].name
+                description = decodedData.episodes.items[index].description
+                image = decodedData.episodes.items[index].images[0].url
             }
             //print(String(data: data, encoding: .utf8)!)
         }
@@ -151,7 +152,7 @@ struct External_urls: Decodable{
 struct API_Previews: PreviewProvider {
     static var previews: some View {
         VStack(alignment: .leading){
-            API(ufeeling: "moist")
+            API(ufeeling: "happy", index: 0)
         }
         .padding()
     }
