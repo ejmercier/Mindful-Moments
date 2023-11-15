@@ -16,12 +16,15 @@ struct API: View {
     @State private var name: String = ""
     @State private var description: String = ""
     @State private var duration: String = ""
+    @State private var spotifyurl: String = ""
     @State private var feeling: String
     @State private var index: Int
+    @State private var time: Int
     
-    init(ufeeling: String, index: Int) {
+    init(ufeeling: String, index: Int, time: Int) {
             self.feeling = ufeeling
             self.index = index
+            self.time = time
         }
     
     var body: some View{
@@ -81,7 +84,7 @@ struct API: View {
         task.resume()
     }
     private func loadSongs(accesstoken: String) {
-        var request = URLRequest(url: URL(string: "https://api.spotify.com/v1/search?q=5+min+meditation+for+\(feeling)&type=episode&market=ES&limit=5")!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: "https://api.spotify.com/v1/search?q=\(time)+min+meditation+for+\(feeling)&type=episode&market=ES&limit=5")!,timeoutInterval: Double.infinity)
         request.addValue("Bearer " + accesstoken, forHTTPHeaderField: "Authorization")
         
         request.httpMethod = "GET"
@@ -93,13 +96,13 @@ struct API: View {
             if let decodedData = try?
                 JSONDecoder().decode(Objects.self, from: data)
             {
-                print("made it")
                 var duration_ms = decodedData.episodes.items[index].duration_ms / 1000
                 let (minutes, remainingSeconds) = secondsToMinutesAndSeconds(seconds: duration_ms)
                 duration = String(minutes) + " min " + String(remainingSeconds) + " sec"
                 name = decodedData.episodes.items[index].name
                 description = decodedData.episodes.items[index].description
                 image = decodedData.episodes.items[index].images[0].url
+                spotifyurl = decodedData.episodes.items[index].external_urls.spotify
             }
             //print(String(data: data, encoding: .utf8)!)
         }
@@ -107,7 +110,7 @@ struct API: View {
         task.resume()
     }
     private func openURL() {
-        if let url = URL(string: "https://api.spotify.com/v1/search?q=5+min+meditation+for+\(feeling)&type=episode&market=ES") {
+        if let url = URL(string: spotifyurl) {
             UIApplication.shared.open(url)
         }
     }
@@ -152,7 +155,7 @@ struct External_urls: Decodable{
 struct API_Previews: PreviewProvider {
     static var previews: some View {
         VStack(alignment: .leading){
-            API(ufeeling: "happy", index: 0)
+            API(ufeeling: "happy", index: 0, time: 7)
         }
         .padding()
     }
