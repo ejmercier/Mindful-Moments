@@ -24,8 +24,9 @@ struct ContentView: View {
                     .disableAutocorrection(true)
                     .frame(width: UIScreen.main.bounds.width * 0.6)
                     .textFieldStyle(.roundedBorder)
+                // change navigation link ( ContentView for design A vs DesignB_FeelingsView for design B )
                 NavigationLink("Submit") {
-                    QuestionView(name: givenName)
+                    DesignB_FeelingsView(name: givenName)
                         .navigationTitle("Mindful Moments")
                 }
                 .buttonStyle(.bordered)
