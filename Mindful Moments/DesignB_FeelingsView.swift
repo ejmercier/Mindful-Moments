@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-//class Time: ObservableObject {
-//    @Published var timeInterval: TimeInterval = 0
-//}
-
 struct DesignB_FeelingsView: View {
     @ObservedObject private var selectedTime = Time()
     var name: String
