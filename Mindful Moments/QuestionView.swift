@@ -37,6 +37,7 @@ struct QuestionView: View {
             }
             .buttonStyle(.bordered)
             .padding()
+            .font(.title)
         }
     }
 }
