@@ -12,8 +12,7 @@ struct DesignB_FeelingPicker: View {
     @Binding var selectedFeeling: String
 
     var body: some View {
-        // feelings
-        ScrollView {
+//        ScrollView {
             LazyVGrid(columns: Array(repeating: GridItem(), count: 3), spacing: 10) {
                 ForEach(feelings, id: \.id) { feeling in
                     Button(action: {self.selectedFeeling = feeling.name}) {
@@ -31,6 +30,6 @@ struct DesignB_FeelingPicker: View {
                 .padding(.horizontal)
             }
             .padding()
-        }
+//        }
     }
 }

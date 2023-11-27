@@ -12,9 +12,12 @@ struct DesignB_FeelingsView: View {
     var name: String
     @State var userInput = UserInputModel(name: "", feeling: "", time: 0)
     @State private var selectedFeeling: String = ""
+    @State private var selectedOption = 0
+    let options = ["Mild", "Moderate", "Significant", "Intense"]
+
     
     var body: some View {
-        VStack {
+        VStack() {
             Text("Hi \(name)!")
                 .font(.system(size: 28))
                 .padding(.bottom)
@@ -22,6 +25,8 @@ struct DesignB_FeelingsView: View {
             Text("How do you feel?").font(.system(size: 32))
             DesignB_FeelingPicker(selectedFeeling: $userInput.feeling).padding(.bottom)
             // TODO: intensity
+            Text("What is the intensity of your emotion?").font(.system(size: 32))
+            DesignB_IntensityPicker().padding(.bottom)
             NavigationLink("Next") {
                 DesignB_TimeView()
                     .environment(userInput)

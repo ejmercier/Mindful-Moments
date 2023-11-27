@@ -17,6 +17,7 @@
 		708CFEFC2B150FD900F867B1 /* DesignB_FeelingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708CFEFB2B150FD900F867B1 /* DesignB_FeelingsView.swift */; };
 		708CFEFE2B15108E00F867B1 /* DesignB_FeelingPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708CFEFD2B15108E00F867B1 /* DesignB_FeelingPicker.swift */; };
 		708CFF002B15150F00F867B1 /* DesignB_TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708CFEFF2B15150F00F867B1 /* DesignB_TimeView.swift */; };
+		708CFF022B1519DA00F867B1 /* DesignB_IntensityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708CFF012B1519DA00F867B1 /* DesignB_IntensityPicker.swift */; };
 		70AEE5292ADC8A17003DA972 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AEE5282ADC8A17003DA972 /* TimePicker.swift */; };
 		70AEE52B2ADDD80C003DA972 /* FeelingPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AEE52A2ADDD80C003DA972 /* FeelingPicker.swift */; };
 		9FADFF5F2AD8B8170072F79B /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FADFF5E2AD8B8170072F79B /* QuestionView.swift */; };
@@ -55,6 +56,7 @@
 		708CFEFB2B150FD900F867B1 /* DesignB_FeelingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignB_FeelingsView.swift; sourceTree = "<group>"; };
 		708CFEFD2B15108E00F867B1 /* DesignB_FeelingPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignB_FeelingPicker.swift; sourceTree = "<group>"; };
 		708CFEFF2B15150F00F867B1 /* DesignB_TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignB_TimeView.swift; sourceTree = "<group>"; };
+		708CFF012B1519DA00F867B1 /* DesignB_IntensityPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignB_IntensityPicker.swift; sourceTree = "<group>"; };
 		70AEE5282ADC8A17003DA972 /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		70AEE52A2ADDD80C003DA972 /* FeelingPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingPicker.swift; sourceTree = "<group>"; };
 		9FADFF5E2AD8B8170072F79B /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				022EEB752AD86289001291B5 /* ContentView.swift */,
 				9FADFF5E2AD8B8170072F79B /* QuestionView.swift */,
 				708CFEFB2B150FD900F867B1 /* DesignB_FeelingsView.swift */,
+				708CFF012B1519DA00F867B1 /* DesignB_IntensityPicker.swift */,
 				708CFEFF2B15150F00F867B1 /* DesignB_TimeView.swift */,
 				708CFEFD2B15108E00F867B1 /* DesignB_FeelingPicker.swift */,
 				70AEE52A2ADDD80C003DA972 /* FeelingPicker.swift */,
@@ -282,6 +285,7 @@
 			files = (
 				022EEB762AD86289001291B5 /* ContentView.swift in Sources */,
 				708CFEFE2B15108E00F867B1 /* DesignB_FeelingPicker.swift in Sources */,
+				708CFF022B1519DA00F867B1 /* DesignB_IntensityPicker.swift in Sources */,
 				9FADFF5F2AD8B8170072F79B /* QuestionView.swift in Sources */,
 				70AEE52B2ADDD80C003DA972 /* FeelingPicker.swift in Sources */,
 				708CFEFC2B150FD900F867B1 /* DesignB_FeelingsView.swift in Sources */,
