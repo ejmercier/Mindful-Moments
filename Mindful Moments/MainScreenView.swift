@@ -41,10 +41,10 @@ struct MainScreenView: View {
                     
                     VStack{
                         let a = generateRandomValues()
-                        API(ufeeling: userInput.feeling, index: 0, time: Int(time/60))
-                        API(ufeeling: userInput.feeling, index: 1, time: Int(time/60))
-                        API(ufeeling: userInput.feeling, index: 2, time: Int(time/60))
-                        API(ufeeling: userInput.feeling, index: 3, time: Int(time/60))
+                        API(ufeeling: userInput.feeling, index: a[0], time: Int(time/60))
+                        API(ufeeling: userInput.feeling, index: a[1], time: Int(time/60))
+                        API(ufeeling: userInput.feeling, index: a[2], time: Int(time/60))
+                        API(ufeeling: userInput.feeling, index: a[3], time: Int(time/60))
                     }
                 }
                     .frame(width: geometry.size.width)
@@ -54,7 +54,7 @@ struct MainScreenView: View {
         var uniqueValues = Set<Int>()
 
         while uniqueValues.count < 4 {
-            let randomValue = Int.random(in: 0..<20)
+            let randomValue = Int.random(in: 0..<4)
             uniqueValues.insert(randomValue)
             print(randomValue)
         }

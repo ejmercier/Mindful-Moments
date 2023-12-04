@@ -89,7 +89,7 @@ struct API: View {
         task.resume()
     }
     private func loadSongs(accesstoken: String) {
-        var request = URLRequest(url: URL(string: "https://api.spotify.com/v1/search?q=\(time)+min+meditation+for+\(feeling)&type=episode&market=ES&limit=20")!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: "https://api.spotify.com/v1/search?q=\(time)+min\(feeling)meditation&type=episode&market=ES&limit=20")!,timeoutInterval: Double.infinity)
         request.addValue("Bearer " + accesstoken, forHTTPHeaderField: "Authorization")
         
         request.httpMethod = "GET"
@@ -103,7 +103,7 @@ struct API: View {
             {
                 var itemlist: [Items] = []
                 for item in decodedData.episodes.items {
-                    if ((item.duration_ms / 60000) > time - 3 && (item.duration_ms/60000) < time + 3){
+                    if ((item.duration_ms / 60000) > time - 5 && (item.duration_ms/60000) < time + 5){
                         itemlist.append(item)
                         print(item.duration_ms/60000)
                     }
@@ -116,7 +116,15 @@ struct API: View {
                     description = itemlist[index].description
                     image = itemlist[index].images[0].url
                     spotifyurl = itemlist[index].external_urls.spotify
-                }else{print("Not in index")}
+                }else{
+                    var duration_ms = decodedData.episodes.items[index].duration_ms / 1000
+                    let (minutes, remainingSeconds) = secondsToMinutesAndSeconds(seconds: duration_ms)
+                    duration = String(minutes) + " min " + String(remainingSeconds) + " sec"
+                    name = decodedData.episodes.items[index].name
+                    description = decodedData.episodes.items[index].description
+                    image = decodedData.episodes.items[index].images[0].url
+                    spotifyurl = decodedData.episodes.items[index].external_urls.spotify
+                }
                 }
                 //print(String(data: data, encoding: .utf8)!)
             }
