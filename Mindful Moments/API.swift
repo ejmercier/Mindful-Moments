@@ -22,10 +22,10 @@ struct API: View {
     @State private var time: Int
     
     init(ufeeling: String, index: Int, time: Int) {
-            self.feeling = ufeeling
-            self.index = index
-            self.time = time
-        }
+        self.feeling = ufeeling
+        self.index = index
+        self.time = time
+    }
     
     var body: some View{
         HStack(alignment: .top, spacing: 10) {
@@ -89,7 +89,7 @@ struct API: View {
         task.resume()
     }
     private func loadSongs(accesstoken: String) {
-        var request = URLRequest(url: URL(string: "https://api.spotify.com/v1/search?q=\(time)+min+meditation+for+\(feeling)&type=episode&market=ES&limit=5")!,timeoutInterval: Double.infinity)
+        var request = URLRequest(url: URL(string: "https://api.spotify.com/v1/search?q=\(time)+min+meditation+for+\(feeling)&type=episode&market=ES&limit=20")!,timeoutInterval: Double.infinity)
         request.addValue("Bearer " + accesstoken, forHTTPHeaderField: "Authorization")
         
         request.httpMethod = "GET"
@@ -101,67 +101,76 @@ struct API: View {
             if let decodedData = try?
                 JSONDecoder().decode(Objects.self, from: data)
             {
-                var duration_ms = decodedData.episodes.items[index].duration_ms / 1000
-                let (minutes, remainingSeconds) = secondsToMinutesAndSeconds(seconds: duration_ms)
-                duration = String(minutes) + " min " + String(remainingSeconds) + " sec"
-                name = decodedData.episodes.items[index].name
-                description = decodedData.episodes.items[index].description
-                image = decodedData.episodes.items[index].images[0].url
-                spotifyurl = decodedData.episodes.items[index].external_urls.spotify
+                var itemlist: [Items] = []
+                for item in decodedData.episodes.items {
+                    if ((item.duration_ms / 60000) > time - 3 && (item.duration_ms/60000) < time + 3){
+                        itemlist.append(item)
+                        print(item.duration_ms/60000)
+                    }
+                }
+                if (index < itemlist.count){
+                    var duration_ms = itemlist[index].duration_ms / 1000
+                    let (minutes, remainingSeconds) = secondsToMinutesAndSeconds(seconds: duration_ms)
+                    duration = String(minutes) + " min " + String(remainingSeconds) + " sec"
+                    name = itemlist[index].name
+                    description = itemlist[index].description
+                    image = itemlist[index].images[0].url
+                    spotifyurl = itemlist[index].external_urls.spotify
+                }else{print("Not in index")}
+                }
+                //print(String(data: data, encoding: .utf8)!)
             }
-            //print(String(data: data, encoding: .utf8)!)
+            
+            task.resume()
         }
-        
-        task.resume()
-    }
-    private func openURL() {
-        if let url = URL(string: spotifyurl) {
-            UIApplication.shared.open(url)
+        private func openURL() {
+            if let url = URL(string: spotifyurl) {
+                UIApplication.shared.open(url)
+            }
+        }
+        func secondsToMinutesAndSeconds(seconds: Int) -> (minutes: Int, seconds: Int) {
+            let minutes = seconds / 60
+            let remainingSeconds = seconds % 60
+            return (minutes, remainingSeconds)
         }
     }
-    func secondsToMinutesAndSeconds(seconds: Int) -> (minutes: Int, seconds: Int) {
-        let minutes = seconds / 60
-        let remainingSeconds = seconds % 60
-        return (minutes, remainingSeconds)
+    struct Response: Decodable {
+        var access_token: String
+        var token_type: String
+        var expires_in: Int
     }
-}
-struct Response: Decodable {
-    var access_token: String
-    var token_type: String
-    var expires_in: Int
-}
-
-struct Objects: Decodable{
-    var episodes: Episodes
-}
-
-struct Episodes: Decodable{
-    var items: [Items]
-}
-
-struct Items: Decodable{
-    var duration_ms: Int
-    var name: String
-    var description: String
-    var href: String
-    var external_urls: External_urls
-    var images: [Image]
-}
-
-struct Image: Decodable{
-    var url: String
-    var height: Int
-    var width: Int
-}
-
-struct External_urls: Decodable{
-    var spotify: String
-}
-struct API_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack(alignment: .leading){
-            API(ufeeling: "happy", index: 0, time: 7)
+    
+    struct Objects: Decodable{
+        var episodes: Episodes
+    }
+    
+    struct Episodes: Decodable{
+        var items: [Items]
+    }
+    
+    struct Items: Decodable{
+        var duration_ms: Int
+        var name: String
+        var description: String
+        var href: String
+        var external_urls: External_urls
+        var images: [Image]
+    }
+    
+    struct Image: Decodable{
+        var url: String
+        var height: Int
+        var width: Int
+    }
+    
+    struct External_urls: Decodable{
+        var spotify: String
+    }
+    struct API_Previews: PreviewProvider {
+        static var previews: some View {
+            VStack(alignment: .leading){
+                API(ufeeling: "happy", index: 0, time: 7)
+            }
+            .padding()
         }
-        .padding()
     }
-}

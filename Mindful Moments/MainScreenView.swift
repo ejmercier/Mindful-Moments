@@ -40,6 +40,7 @@ struct MainScreenView: View {
                         .font(.title)
                     
                     VStack{
+                        let a = generateRandomValues()
                         API(ufeeling: userInput.feeling, index: 0, time: Int(time/60))
                         API(ufeeling: userInput.feeling, index: 1, time: Int(time/60))
                         API(ufeeling: userInput.feeling, index: 2, time: Int(time/60))
@@ -49,7 +50,17 @@ struct MainScreenView: View {
                     .frame(width: geometry.size.width)
             }
         }
-    }
+    func generateRandomValues() -> [Int] {
+        var uniqueValues = Set<Int>()
+
+        while uniqueValues.count < 4 {
+            let randomValue = Int.random(in: 0..<20)
+            uniqueValues.insert(randomValue)
+            print(randomValue)
+        }
+
+        return Array(uniqueValues)
+    }    }
 
 #Preview {
     MainScreenView(time: 0)
