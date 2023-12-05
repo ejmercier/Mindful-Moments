@@ -26,7 +26,7 @@ struct ContentView: View {
                     .textFieldStyle(.roundedBorder)
                 // change navigation link ( DesignA_QuestionView for design A vs DesignB_FeelingsView for design B )
                 NavigationLink("Submit") {
-                    DesignB_FeelingsView(name: givenName)
+                    DesignA_QuestionView(name: givenName)
                         .navigationTitle("Mindful Moments")
                 }
                 .buttonStyle(.bordered)
