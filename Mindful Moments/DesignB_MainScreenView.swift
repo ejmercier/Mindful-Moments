@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainScreenView: View {
+struct DesignB_MainScreenView: View {
     @Environment(UserInputModel.self) private var userInput: UserInputModel
     var minTime: TimeInterval
     var maxTime: TimeInterval
@@ -33,9 +33,6 @@ struct MainScreenView: View {
             }
             .padding()
         }
-        
-        NavigationLink("Change selections", destination: QuestionView(name: userInput.name))
-            .padding(.bottom, 30)
         
         GeometryReader { geometry in
             ScrollView(.vertical, showsIndicators: false){
@@ -91,5 +88,5 @@ struct MeditationIcon: View {
 }
 
 #Preview {
-    MainScreenView(minTime: 0, maxTime: 5)
+    DesignB_MainScreenView(minTime: 0, maxTime: 5)
 }
