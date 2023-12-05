@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MainScreenView: View {
     @Environment(UserInputModel.self) private var userInput: UserInputModel
-    var time: TimeInterval
+    var minTime: TimeInterval
+    var maxTime: TimeInterval
     
     var body: some View {
         HStack (alignment: .top) {
@@ -17,15 +18,17 @@ struct MainScreenView: View {
                 Text("Feeling Selected:")
                 FeelingsIcon(feeling: Feeling(name: userInput.feeling, emoji: userInput.feeling.emoji))
                     .frame(width:105)
-                    .background(RoundedRectangle(cornerRadius: 25).fill(.background.secondary))
+                    .background(RoundedRectangle(cornerRadius: 15).fill(.background.secondary))
             }
             .padding()
            
             VStack {
                 Text("Time Selected:")
-                let timeInMin: Int = Int(time/60)
-                Text("\(timeInMin) mins")
-                    .frame(width: 90, height: 30)
+                let mintimeInMin: Int = Int(minTime/60)
+                let maxtimeInMin: Int = Int(maxTime/60)
+                Text("\(mintimeInMin) mins - \(maxtimeInMin) mins")
+                    .frame(width: 90, height: .infinity, alignment: .center)
+                    .padding(.all, 10)
                     .background(RoundedRectangle(cornerRadius: 15).fill(.background.secondary))
             }
             .padding()
@@ -76,5 +79,5 @@ struct MeditationIcon: View {
 }
 
 #Preview {
-    MainScreenView(time: 0)
+    MainScreenView(minTime: 0, maxTime: 5)
 }
