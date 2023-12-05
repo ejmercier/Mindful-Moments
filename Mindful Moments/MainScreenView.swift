@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MainScreenView: View {
     @Environment(UserInputModel.self) private var userInput: UserInputModel
-
     var minTime: TimeInterval
     var maxTime: TimeInterval
     
@@ -45,27 +44,39 @@ struct MainScreenView: View {
                         .font(.title)
                     
                     VStack{
-                        let a = generateRandomValues()
-                        API(ufeeling: userInput.feeling, index: a[0], time: Int(mintime/60))
-                        API(ufeeling: userInput.feeling, index: a[1], time: Int(mintime/60))
-                        API(ufeeling: userInput.feeling, index: a[2], time: Int(mintime/60))
-                        API(ufeeling: userInput.feeling, index: a[3], time: Int(mintime/60))
+                        ForEach(0..<7){ _ in
+                            VStack {
+                                MeditationIcon()
+                        }.padding(.top, 15)
                     }
                 }
                     .frame(width: geometry.size.width)
+                    .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             }
         }
-    func generateRandomValues() -> [Int] {
-        var uniqueValues = Set<Int>()
+    }
+}
 
-        while uniqueValues.count < 4 {
-            let randomValue = Int.random(in: 0..<4)
-            uniqueValues.insert(randomValue)
-            print(randomValue)
+struct MeditationIcon: View {
+    var body: some View {
+        HStack {
+            Rectangle()
+                .frame(width: 75, height: 75)
+            VStack(alignment: .leading, content: {
+                Text("duration")
+                    .foregroundStyle(.tertiary)
+                Text("Meditation Title")
+                    .foregroundStyle(.primary)
+                    .font(.title3)
+                Text("description")
+                    .foregroundStyle(.secondary)
+            })
         }
-
-        return Array(uniqueValues)
-    }    }
+        .padding()
+        .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
+        .background(RoundedRectangle(cornerRadius: 15).fill(.background).shadow(radius: 2, x: 0, y:0))
+    }
+}
 
 #Preview {
     MainScreenView(minTime: 0, maxTime: 5)
