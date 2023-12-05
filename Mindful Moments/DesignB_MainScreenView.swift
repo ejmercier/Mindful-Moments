@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainScreenView: View {
+struct DesignB_MainScreenView: View {
     @Environment(UserInputModel.self) private var userInput: UserInputModel
     var minTime: TimeInterval
     var maxTime: TimeInterval
@@ -76,5 +76,5 @@ struct MeditationIcon: View {
 }
 
 #Preview {
-    MainScreenView(minTime: 0, maxTime: 5)
+    DesignB_MainScreenView(minTime: 0, maxTime: 5)
 }

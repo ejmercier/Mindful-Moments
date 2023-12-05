@@ -11,7 +11,7 @@ class Time: ObservableObject {
     @Published var timeInterval: TimeInterval = 0
 }
 
-struct QuestionView: View {
+struct DesignA_QuestionView: View {
     @ObservedObject private var selectedTime = Time()
     var name: String
     @State var userInput = UserInputModel(name: "", feeling: "", time: 0)
@@ -30,14 +30,14 @@ struct QuestionView: View {
             TimePicker(countdownInterval: $selectedTime.timeInterval).padding(.bottom)
 
            //button to the next page (main screen)
-//            NavigationLink("Find Recommendations") {
-//                MainScreenView(time: selectedTime.timeInterval)
-//                    .environment(userInput)
-//                    .navigationTitle("Mindful Moments")
-//            }
-//            .buttonStyle(.bordered)
-//            .padding()
-//            .font(.title)
+            NavigationLink("Find Recommendations") {
+                DesignA_MainScreenView(time: selectedTime.timeInterval)
+                    .environment(userInput)
+                    .navigationTitle("Mindful Moments")
+            }
+            .buttonStyle(.bordered)
+            .padding()
+            .font(.title)
         }
     }
 }
@@ -57,6 +57,6 @@ class UserInputModel {
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(name: "Cathy")
+        DesignA_QuestionView(name: "Cathy")
     }
 }
