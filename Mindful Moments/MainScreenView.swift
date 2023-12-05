@@ -34,9 +34,6 @@ struct MainScreenView: View {
             .padding()
         }
         
-        NavigationLink("Change selections", destination: QuestionView(name: userInput.name))
-            .padding(.bottom, 30)
-        
         GeometryReader { geometry in
                 ScrollView(.vertical, showsIndicators: false){
                     Text("Recomended Meditations")
